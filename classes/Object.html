@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Object</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+    <script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>     
+    <div class="banner">
+        <h1>
+            <span class="type">Class</span> 
+            Object 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/lib/sucker/active_support/core_ext/object/blank_rb.html">lib/sucker/active_support/core_ext/object/blank.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+    
+    <div class="description">
+        <p>
+<a
+href="http://github.com/rails/rails/blob/v3.0.0/activesupport/core_ext/object/blank.rb">github.com/rails/rails/blob/v3.0.0/activesupport/core_ext/object/blank.rb</a>
+</p>
+
+    </div>
+    
+
+    
+
+    
+    
+
+    
+    
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+    
+        <dt>B</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000000">blank?</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>P</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000002">presence</a>,</li>
+                
+                <li><a href="#M000001">present?</a></li>
+                
+            </ul>
+        </dd>
+    
+    </dl>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+            <div class="sectiontitle">Instance Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M000000">
+                    
+                    <a name="M000000"></a><b>blank?</b>()
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+An object is blank if it&#8217;s false, empty, or a whitespace string. For
+example, &#8220;&#8221;, &#8220; &#8220;, <tt>nil</tt>, [], and {} are
+blank.
+</p>
+<p>
+This simplifies:
+</p>
+<pre>
+  if !address.nil? &amp;&amp; !address.empty?
+</pre>
+<p>
+&#8230;to:
+</p>
+<pre>
+  if !address.blank?
+</pre>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000000_source')" id="l_M000000_source">show</a>
+                        
+                        | <a href="http://github.com/papercavalier/sucker/blob/5e0f5650b5e15a0b38aeb924e1f699c144fa3277/lib/sucker/active_support/core_ext/object/blank.rb#L13" target="_blank" class="github_url">on GitHub</a>
+                        
+                    </p>
+                    <div id="M000000_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/sucker/active_support/core_ext/object/blank.rb, line 13</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">blank?</span>
+    <span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:empty?</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">empty?</span> <span class="ruby-operator">:</span> <span class="ruby-operator">!</span><span class="ruby-keyword kw">self</span>
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000002">
+                    
+                    <a name="M000002"></a><b>presence</b>()
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Returns object if it&#8217;s <a href="Object.html#M000001">present?</a>
+otherwise returns nil. object.presence is equivalent to object.present? ?
+object : nil.
+</p>
+<p>
+This is handy for any representation of objects where blank is the same as
+not present at all. For example, this simplifies a common check for HTTP
+POST/query parameters:
+</p>
+<pre>
+  state   = params[:state]   if params[:state].present?
+  country = params[:country] if params[:country].present?
+  region  = state || country || 'US'
+</pre>
+<p>
+&#8230;becomes:
+</p>
+<pre>
+  region = params[:state].presence || params[:country].presence || 'US'
+</pre>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000002_source')" id="l_M000002_source">show</a>
+                        
+                        | <a href="http://github.com/papercavalier/sucker/blob/5e0f5650b5e15a0b38aeb924e1f699c144fa3277/lib/sucker/active_support/core_ext/object/blank.rb#L36" target="_blank" class="github_url">on GitHub</a>
+                        
+                    </p>
+                    <div id="M000002_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/sucker/active_support/core_ext/object/blank.rb, line 36</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">presence</span>
+    <span class="ruby-keyword kw">self</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">present?</span>
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000001">
+                    
+                    <a name="M000001"></a><b>present?</b>()
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+An object is present if it&#8217;s not blank.
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000001_source')" id="l_M000001_source">show</a>
+                        
+                        | <a href="http://github.com/papercavalier/sucker/blob/5e0f5650b5e15a0b38aeb924e1f699c144fa3277/lib/sucker/active_support/core_ext/object/blank.rb#L18" target="_blank" class="github_url">on GitHub</a>
+                        
+                    </p>
+                    <div id="M000001_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/sucker/active_support/core_ext/object/blank.rb, line 18</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">present?</span>
+    <span class="ruby-operator">!</span><span class="ruby-identifier">blank?</span>
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+</div>
+    </div>
+  </body>
+</html>    

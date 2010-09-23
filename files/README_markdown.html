@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>README.markdown</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+    <script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>     
+    <div class="banner">
+        <h1>
+            README.markdown
+        </h1>
+        <ul class="files">
+            <li>README.markdown</li>
+            <li>Last modified: 2010-09-23 22:25:39 +0100</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+    
+    <div class="description">
+        <h1>Sucker</h1>
+
+<p>Sucker is a paper-thin Ruby wrapper to the <a href="https://affiliate-program.amazon.co.uk/gp/advertising/api/detail/main.html">Amazon Product Advertising API</a>. It runs on cURL and Nokogiri and supports <strong>the entire API</strong>.</p>
+
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/FEMA_-_32011_-_FEMA_Joint_Field_Office_%28JFO%29_preparation_in_Ohio.jpg/540px-FEMA_-_32011_-_FEMA_Joint_Field_Office_%28JFO%29_preparation_in_Ohio.jpg" alt="Sucker" /></p>
+
+<h2>Examples</h2>
+
+<p>Set up a worker.</p>
+
+<pre><code>worker = Sucker.new(
+  :locale         =&gt; "us",
+  :key            =&gt; "API KEY",
+  :secret         =&gt; "API SECRET")
+</code></pre>
+
+<p>Optionally, fiddle with cURL. Say you want to query Amazon through a different network interface:</p>
+
+<pre><code>worker.curl { |c| c.interface = "eth0:0" }
+</code></pre>
+
+<p>Set up a request.</p>
+
+<pre><code>asin_batch = %w{
+  0816614024 0143105825 0485113600 0816616779 0942299078
+  0816614008 144006654X 0486400360 0486417670 087220474X }
+worker &lt;&lt; {
+  "Operation"     =&gt; "ItemLookup",
+  "IdType"        =&gt; "ASIN",
+  "ItemId"        =&gt; asin_batch,
+  "ResponseGroup" =&gt; ["ItemAttributes", "OfferFull"] }
+</code></pre>
+
+<p>Hit Amazon.</p>
+
+<pre><code>response = worker.get
+</code></pre>
+
+<p>View the internals of the response object.</p>
+
+<pre><code>p response.code,
+  response.time,
+  response.body,
+  response.xml
+</code></pre>
+
+<p>The response parsed into a simple hash:</p>
+
+<pre><code>pp response.to_hash
+</code></pre>
+
+<p>You will probably be more interested in particular nodes:</p>
+
+<pre><code>   response.node("Item"),
+   response.node("Error")
+</code></pre>
+
+<p>Fetch another ASIN in a more DSL-y way.</p>
+
+<pre><code>worker &lt;&lt; { "ItemId"  =&gt; "0486454398" }
+pp worker.get.node("Item")
+</code></pre>
+
+<p>Repeat ad infinitum.</p>
+
+<p>Check the integration specs for more examples and then dive into API documentation.</p>
+
+<h2>Stubbing</h2>
+
+<p>To stub web requests in your specs, create <code>spec/support/sucker_helper.rb</code>:</p>
+
+<pre><code>require "sucker/stub"
+
+Sucker.fixtures_path = File.dirname(__FILE__) + "/../fixtures"
+</code></pre>
+
+<p>In your spec, you can now stub the worker:</p>
+
+<pre><code>@worker = Sucker.new(some_hash)
+Sucker.stub(@worker)
+</code></pre>
+
+<p>The first time you run the spec, Sucker will perform the actual request. Following requests will use a cached response.</p>
+
+<h2>Compatibility</h2>
+
+<p>Specs pass against Ruby 1.8.7 and 1.9.2.</p>
+
+<h2>Todo</h2>
+
+<ul>
+<li>Rip out the Stub class and use VCR instead once someone writes up a Curb adaptor for Webmock.</li>
+</ul>
+
+<script type="text/javascript">$(function() {
+  $('a').each(function() { $(this).attr('target', '_blank') })
+})</script>
+
+    </div>
+    
+
+    
+
+    
+    
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Sucker</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+    <script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>     
+    <div class="banner">
+        <h1>
+            <span class="type">Module</span> 
+            Sucker 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/lib/sucker/active_support/xml_mini/nokogiri_rb.html">lib/sucker/active_support/xml_mini/nokogiri.rb</a></li>
+            
+            <li><a href="../files/lib/sucker/request_rb.html">lib/sucker/request.rb</a></li>
+            
+            <li><a href="../files/lib/sucker/response_rb.html">lib/sucker/response.rb</a></li>
+            
+            <li><a href="../files/lib/sucker/stub_rb.html">lib/sucker/stub.rb</a></li>
+            
+            <li><a href="../files/lib/sucker_rb.html">lib/sucker.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+    
+    <div class="description">
+        <p>
+<a
+href="http://github.com/rails/rails/blob/v3.0.0/activesupport/lib/active_support/xml_mini/nokogiri.rb">github.com/rails/rails/blob/v3.0.0/activesupport/lib/active_support/xml_mini/nokogiri.rb</a>
+</p>
+<hr size="1"></hr><h1><a href="Sucker.html">Sucker</a></h1>
+<p>
+<a href="Sucker.html">Sucker</a> is a paper-thin Ruby wrapper to the Amazon
+Product Advertising API.
+</p>
+
+    </div>
+    
+
+    
+
+    
+    
+
+    
+    
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+    
+        <dt>N</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000021">new</a></li>
+                
+            </ul>
+        </dd>
+    
+        <dt>S</dt>
+        <dd>
+            <ul>
+                
+                <li><a href="#M000022">stub</a></li>
+                
+            </ul>
+        </dd>
+    
+    </dl>
+    
+
+    
+
+    
+
+    
+    <div class="sectiontitle">Classes and Modules</div>
+    <ul>
+        
+        <li><span class="type">MODULE</span> <a href="Sucker/ActiveSupport.html">Sucker::ActiveSupport</a></li>
+        
+        <li><span class="type">CLASS</span> <a href="Sucker/MockResponse.html">Sucker::MockResponse</a></li>
+        
+        <li><span class="type">CLASS</span> <a href="Sucker/Request.html">Sucker::Request</a></li>
+        
+        <li><span class="type">CLASS</span> <a href="Sucker/Response.html">Sucker::Response</a></li>
+        
+    </ul>
+    
+
+    
+    <div class="sectiontitle">Constants</div>
+    <table border='0' cellpadding='5'>
+        
+        <tr valign='top'>
+            <td class="attr-name">AMAZON_API_VERSION</td>
+            <td>=</td>
+            <td class="attr-value">&quot;2010-06-01&quot;</td>
+        </tr>
+        
+        
+    </table>
+    
+
+    
+    <div class="sectiontitle">Attributes</div>
+    <table border='0' cellpadding='5'>
+        
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [RW]
+            </td>
+            <td class='attr-name'>fixtures_path</td>
+            <td class='attr-desc'></td>
+        </tr>
+        
+    </table>
+    
+
+    
+            <div class="sectiontitle">Class Public methods</div>
+            
+            <div class="method">
+                <div class="title" id="M000021">
+                    
+                    <a name="M000021"></a><b>new</b>(args={})
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Instantiates a new <a href="Sucker/Request.html">Sucker::Request</a>
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000021_source')" id="l_M000021_source">show</a>
+                        
+                        | <a href="http://github.com/papercavalier/sucker/blob/0ffae3cc77b259b87048317b57f92225e7eeb9da/lib/sucker.rb#L22" target="_blank" class="github_url">on GitHub</a>
+                        
+                    </p>
+                    <div id="M000021_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/sucker.rb, line 22</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>={})
+    <span class="ruby-constant">Sucker</span><span class="ruby-operator">::</span><span class="ruby-constant">Request</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000022">
+                    
+                    <a name="M000022"></a><b>stub</b>(request)
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Records a request on first run and fakes subsequently
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000022_source')" id="l_M000022_source">show</a>
+                        
+                        | <a href="http://github.com/papercavalier/sucker/blob/0ffae3cc77b259b87048317b57f92225e7eeb9da/lib/sucker/stub.rb#L16" target="_blank" class="github_url">on GitHub</a>
+                        
+                    </p>
+                    <div id="M000022_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/sucker/stub.rb, line 16</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stub</span>(<span class="ruby-identifier">request</span>)
+      <span class="ruby-identifier">request</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-keyword kw">do</span>
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">send</span> <span class="ruby-identifier">:define_method</span>, <span class="ruby-identifier">:fixture</span> <span class="ruby-keyword kw">do</span>
+          <span class="ruby-identifier">values</span> = <span class="ruby-identifier">parameters</span>.
+            <span class="ruby-identifier">reject</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-node">%w{AWSAccessKeyId Service}</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">k</span> }.
+            <span class="ruby-identifier">values</span>.
+            <span class="ruby-identifier">flatten</span>.
+            <span class="ruby-identifier">join</span>
+          <span class="ruby-identifier">filename</span> = <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">MD5</span>.<span class="ruby-identifier">hexdigest</span>(<span class="ruby-identifier">host</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">values</span>)
+          <span class="ruby-node">&quot;#{Sucker.fixtures_path}/#{filename}.xml&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">send</span> <span class="ruby-identifier">:define_method</span>, <span class="ruby-identifier">:get</span> <span class="ruby-keyword kw">do</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">fixture</span>)
+            <span class="ruby-constant">MockResponse</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">fixture</span>, <span class="ruby-value str">&quot;r&quot;</span>).<span class="ruby-identifier">read</span>)
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">url</span> = <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">to_s</span>
+            <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">perform</span>
+            <span class="ruby-identifier">response</span> = <span class="ruby-constant">Response</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">curl</span>)
+
+            <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">fixture</span>, <span class="ruby-value str">&quot;w&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span> }
+
+            <span class="ruby-identifier">response</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+</div>
+    </div>
+  </body>
+</html>    

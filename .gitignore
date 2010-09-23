@@ -1,0 +1,8 @@
+.DS_Store
+.rvmrc
+.bundle
+docs
+pkg
+spec/support/amazon.yml
+.rake_tasks~
+spec/fixtures/*xml
