@@ -56,9 +56,9 @@ A Nokogiri-driven wrapper around the cURL response
         <dd>
             <ul>
                 
-                <li><a href="#M000003">new</a>,</li>
+                <li><a href="#M000004">new</a>,</li>
                 
-                <li><a href="#M000004">node</a></li>
+                <li><a href="#M000005">node</a></li>
                 
             </ul>
         </dd>
@@ -67,7 +67,7 @@ A Nokogiri-driven wrapper around the cURL response
         <dd>
             <ul>
                 
-                <li><a href="#M000005">to_hash</a></li>
+                <li><a href="#M000006">to_hash</a></li>
                 
             </ul>
         </dd>
@@ -136,9 +136,9 @@ A Nokogiri-driven wrapper around the cURL response
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000003">
+                <div class="title" id="M000004">
                     
-                    <a name="M000003"></a><b>new</b>(curl)
+                    <a name="M000004"></a><b>new</b>(curl)
                     
                 </div>
                 
@@ -147,12 +147,12 @@ A Nokogiri-driven wrapper around the cURL response
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000003_source')" id="l_M000003_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000004_source')" id="l_M000004_source">show</a>
                         
                         | <a href="http://github.com/papercavalier/sucker/blob/93774da6c70c1dc2101a18342941f79ebe39467d/lib/sucker/response.rb#L8" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000003_source" class="dyn-source">
+                    <div id="M000004_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/sucker/response.rb, line 8</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">curl</span>)
       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">body</span> = <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">body_str</span>
@@ -167,9 +167,9 @@ A Nokogiri-driven wrapper around the cURL response
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000004">
+                <div class="title" id="M000005">
                     
-                    <a name="M000004"></a><b>node</b>(path)
+                    <a name="M000005"></a><b>node</b>(path)
                     
                 </div>
                 
@@ -185,12 +185,12 @@ Queries an xpath and returns result as an array of hashes
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000004_source')" id="l_M000004_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000005_source')" id="l_M000005_source">show</a>
                         
                         | <a href="http://github.com/papercavalier/sucker/blob/93774da6c70c1dc2101a18342941f79ebe39467d/lib/sucker/response.rb#L15" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000004_source" class="dyn-source">
+                    <div id="M000005_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/sucker/response.rb, line 15</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">node</span>(<span class="ruby-identifier">path</span>)
       <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-node">&quot;//xmlns:#{path}&quot;</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span> <span class="ruby-identifier">strip_content</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">to_hash</span>[<span class="ruby-identifier">path</span>]) }
@@ -201,9 +201,9 @@ Queries an xpath and returns result as an array of hashes
             </div>
             
             <div class="method">
-                <div class="title" id="M000005">
+                <div class="title" id="M000006">
                     
-                    <a name="M000005"></a><b>to_hash</b>()
+                    <a name="M000006"></a><b>to_hash</b>()
                     
                 </div>
                 
@@ -219,12 +219,12 @@ Parses the response into a simple hash
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000005_source')" id="l_M000005_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000006_source')" id="l_M000006_source">show</a>
                         
                         | <a href="http://github.com/papercavalier/sucker/blob/93774da6c70c1dc2101a18342941f79ebe39467d/lib/sucker/response.rb#L20" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000005_source" class="dyn-source">
+                    <div id="M000006_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/sucker/response.rb, line 20</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_hash</span>
       <span class="ruby-identifier">strip_content</span>(<span class="ruby-identifier">xml</span>.<span class="ruby-identifier">to_hash</span>)
