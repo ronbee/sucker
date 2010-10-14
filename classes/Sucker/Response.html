@@ -149,7 +149,7 @@ A Nokogiri-driven wrapper around the cURL response
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000012_source')" id="l_M000012_source">show</a>
                         
-                        | <a href="http://github.com/papercavalier/sucker/blob/d229db1053778f32cfe3684e9a6738ed41589282/lib/sucker/response.rb#L8" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/papercavalier/sucker/blob/93774da6c70c1dc2101a18342941f79ebe39467d/lib/sucker/response.rb#L8" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000012_source" class="dyn-source">
@@ -187,7 +187,7 @@ Queries an xpath and returns result as an array of hashes
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000013_source')" id="l_M000013_source">show</a>
                         
-                        | <a href="http://github.com/papercavalier/sucker/blob/d229db1053778f32cfe3684e9a6738ed41589282/lib/sucker/response.rb#L15" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/papercavalier/sucker/blob/93774da6c70c1dc2101a18342941f79ebe39467d/lib/sucker/response.rb#L15" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000013_source" class="dyn-source">
@@ -221,7 +221,7 @@ Parses the response into a simple hash
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000014_source')" id="l_M000014_source">show</a>
                         
-                        | <a href="http://github.com/papercavalier/sucker/blob/d229db1053778f32cfe3684e9a6738ed41589282/lib/sucker/response.rb#L20" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/papercavalier/sucker/blob/93774da6c70c1dc2101a18342941f79ebe39467d/lib/sucker/response.rb#L20" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000014_source" class="dyn-source">
@@ -241,6 +241,13 @@ Parses the response into a simple hash
                     
                 </div>
                 
+                <div class="description">
+                  <p>
+Checks if the HTTP response is OK
+</p>
+
+                </div>
+                
                 
                 
                 
@@ -248,11 +255,11 @@ Parses the response into a simple hash
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000015_source')" id="l_M000015_source">show</a>
                         
-                        | <a href="http://github.com/papercavalier/sucker/blob/d229db1053778f32cfe3684e9a6738ed41589282/lib/sucker/response.rb#L24" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/papercavalier/sucker/blob/93774da6c70c1dc2101a18342941f79ebe39467d/lib/sucker/response.rb#L25" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000015_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/sucker/response.rb, line 24</span>
+                        <pre><span class="ruby-comment cmt"># File lib/sucker/response.rb, line 25</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">valid?</span>
       <span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">200</span>
     <span class="ruby-keyword kw">end</span></pre>
@@ -282,11 +289,11 @@ The XML document
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000016_source')" id="l_M000016_source">show</a>
                         
-                        | <a href="http://github.com/papercavalier/sucker/blob/d229db1053778f32cfe3684e9a6738ed41589282/lib/sucker/response.rb#L29" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/papercavalier/sucker/blob/93774da6c70c1dc2101a18342941f79ebe39467d/lib/sucker/response.rb#L30" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000016_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/sucker/response.rb, line 29</span>
+                        <pre><span class="ruby-comment cmt"># File lib/sucker/response.rb, line 30</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">xml</span>
       <span class="ruby-ivar">@xml</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>(<span class="ruby-identifier">body</span>)
     <span class="ruby-keyword kw">end</span></pre>

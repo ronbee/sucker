@@ -25,8 +25,6 @@
             
             <li><a href="../files/lib/sucker/response_rb.html">lib/sucker/response.rb</a></li>
             
-            <li><a href="../files/lib/sucker/stub_rb.html">lib/sucker/stub.rb</a></li>
-            
             <li><a href="../files/lib/sucker/version_rb.html">lib/sucker/version.rb</a></li>
             
             <li><a href="../files/lib/sucker_rb.html">lib/sucker.rb</a></li>
@@ -38,9 +36,6 @@
     
     <div class="description">
         <p>
-encoding: utf-8
-</p>
-<hr size="1"></hr><p>
 encoding: utf-8
 </p>
 <hr size="1"></hr><p>
@@ -72,16 +67,7 @@ Advertising API.
         <dd>
             <ul>
                 
-                <li><a href="#M000021">new</a></li>
-                
-            </ul>
-        </dd>
-    
-        <dt>S</dt>
-        <dd>
-            <ul>
-                
-                <li><a href="#M000020">stub</a></li>
+                <li><a href="#M000020">new</a></li>
                 
             </ul>
         </dd>
@@ -97,8 +83,6 @@ Advertising API.
     <div class="sectiontitle">Classes and Modules</div>
     <ul>
         
-        <li><span class="type">CLASS</span> <a href="Sucker/MockResponse.html">Sucker::MockResponse</a></li>
-        
         <li><span class="type">CLASS</span> <a href="Sucker/Request.html">Sucker::Request</a></li>
         
         <li><span class="type">CLASS</span> <a href="Sucker/Response.html">Sucker::Response</a></li>
@@ -113,77 +97,30 @@ Advertising API.
         <tr valign='top'>
             <td class="attr-name">VERSION</td>
             <td>=</td>
-            <td class="attr-value">&quot;0.9.2&quot;</td>
+            <td class="attr-value">&quot;1.0.0.beta.1&quot;</td>
         </tr>
         
         
         <tr valign='top'>
-            <td class="attr-name">AMAZON_API_VERSION</td>
+            <td class="attr-name">CURRENT_AMAZON_API_VERSION</td>
             <td>=</td>
-            <td class="attr-value">&quot;2010-06-01&quot;</td>
+            <td class="attr-value">&quot;2010-09-01&quot;</td>
         </tr>
         
         
     </table>
     
 
-    
-    <div class="sectiontitle">Attributes</div>
-    <table border='0' cellpadding='5'>
-        
-        <tr valign='top'>
-            <td class='attr-rw'>
-                [RW]
-            </td>
-            <td class='attr-name'>fixtures_path</td>
-            <td class='attr-desc'></td>
-        </tr>
-        
-    </table>
     
 
     
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000021">
-                    
-                    <a name="M000021"></a><b>new</b>(args={})
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000021_source')" id="l_M000021_source">show</a>
-                        
-                        | <a href="http://github.com/papercavalier/sucker/blob/26e2df478503dd8f548f52dacef32cc6df7096a7/lib/sucker.rb#L16" target="_blank" class="github_url">on GitHub</a>
-                        
-                    </p>
-                    <div id="M000021_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/sucker.rb, line 16</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>={})
-    <span class="ruby-constant">Sucker</span><span class="ruby-operator">::</span><span class="ruby-constant">Request</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>)
-  <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
                 <div class="title" id="M000020">
                     
-                    <a name="M000020"></a><b>stub</b>(request)
+                    <a name="M000020"></a><b>new</b>(args={})
                     
-                </div>
-                
-                <div class="description">
-                  <p>
-Records a request on first run and fakes subsequently
-</p>
-
                 </div>
                 
                 
@@ -193,38 +130,14 @@ Records a request on first run and fakes subsequently
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000020_source')" id="l_M000020_source">show</a>
                         
-                        | <a href="http://github.com/papercavalier/sucker/blob/c26cf8910b815fab1ac5e321df672455c1a64e19/lib/sucker/stub.rb#L17" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/papercavalier/sucker/blob/1e7787b298855e868f9430e9058c4c9d876dbacd/lib/sucker.rb#L14" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000020_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/sucker/stub.rb, line 17</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stub</span>(<span class="ruby-identifier">request</span>)
-      <span class="ruby-identifier">request</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-keyword kw">do</span>
-        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">send</span> <span class="ruby-identifier">:define_method</span>, <span class="ruby-identifier">:fixture</span> <span class="ruby-keyword kw">do</span>
-          <span class="ruby-identifier">values</span> = <span class="ruby-identifier">parameters</span>.
-            <span class="ruby-identifier">reject</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-node">%w{AWSAccessKeyId Service}</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">k</span> }.
-            <span class="ruby-identifier">values</span>.
-            <span class="ruby-identifier">flatten</span>.
-            <span class="ruby-identifier">join</span>
-          <span class="ruby-identifier">filename</span> = <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">MD5</span>.<span class="ruby-identifier">hexdigest</span>(<span class="ruby-identifier">host</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">values</span>)
-          <span class="ruby-node">&quot;#{Sucker.fixtures_path}/#{filename}.xml&quot;</span>
-        <span class="ruby-keyword kw">end</span>
-
-        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">send</span> <span class="ruby-identifier">:define_method</span>, <span class="ruby-identifier">:get</span> <span class="ruby-keyword kw">do</span>
-          <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">fixture</span>)
-            <span class="ruby-constant">MockResponse</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">fixture</span>, <span class="ruby-value str">&quot;r&quot;</span>).<span class="ruby-identifier">read</span>)
-          <span class="ruby-keyword kw">else</span>
-            <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">url</span> = <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">to_s</span>
-            <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">perform</span>
-            <span class="ruby-identifier">response</span> = <span class="ruby-constant">Response</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">curl</span>)
-
-            <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">fixture</span>, <span class="ruby-value str">&quot;w&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span> }
-
-            <span class="ruby-identifier">response</span>
-          <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span>
-      <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
+                        <pre><span class="ruby-comment cmt"># File lib/sucker.rb, line 14</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>={})
+    <span class="ruby-constant">Sucker</span><span class="ruby-operator">::</span><span class="ruby-constant">Request</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
