@@ -19,7 +19,7 @@
         </h1>
         <ul class="files">
             <li>README.markdown</li>
-            <li>Last modified: 2010-10-14 16:24:56 +0100</li>
+            <li>Last modified: Thu Oct 14 17:09:08 +0100 2010</li>
         </ul>
     </div>
 
@@ -101,7 +101,9 @@ pp worker.get.node("Item")
 
 <h2>Stubbing</h2>
 
-<p>Use <a href="http://github.com/myronmarston/vcr">VCR</a>. <a href="http://github.com/papercavalier/sucker/blob/master/spec/support/sucker.rb">This</a> is my RSpec helper.</p>
+<p>Use <a href="http://github.com/myronmarston/vcr">VCR</a> to stub your requests. <a href="http://github.com/papercavalier/sucker/blob/master/spec/support/vcr.rb">This file</a> should help you set up VCR with RSpec.</p>
+
+<p>Don't match requests on URI. The parameters include a timestamp, so each URI is unique.</p>
 
 <h2>Compatibility</h2>
 
