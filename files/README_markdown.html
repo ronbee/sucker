@@ -19,7 +19,7 @@
         </h1>
         <ul class="files">
             <li>README.markdown</li>
-            <li>Last modified: 2010-10-15 16:08:29 +0100</li>
+            <li>Last modified: 2010-10-22 11:48:14 +0100</li>
         </ul>
     </div>
 
@@ -29,9 +29,9 @@
     <div class="description">
         <h1>Sucker</h1>
 
-<p>Sucker is a Ruby wrapper to the <a href="https://affiliate-program.amazon.co.uk/gp/advertising/api/detail/main.html">Amazon Product Advertising API</a>. It runs on cURL and the Nokogiri implementation of the XML Mini module in Active Support. It is blazing fast and supports <strong>the entire API</strong>.</p>
+<p>Sucker is a Ruby wrapper to the <a href="https://affiliate-program.amazon.co.uk/gp/advertising/api/detail/main.html">Amazon Product Advertising API</a>. It runs on <a href="http://github.com/taf2/curb">curb</a> and the Nokogiri implementation of the XML Mini module in Active Support. It is blazing fast and supports <strong>the entire API</strong>.</p>
 
-<p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/FEMA_-_32011_-_FEMA_Joint_Field_Office_%28JFO%29_preparation_in_Ohio.jpg/540px-FEMA_-_32011_-_FEMA_Joint_Field_Office_%28JFO%29_preparation_in_Ohio.jpg" alt="Sucker" /></p>
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/FEMA_-_32011_-_FEMA_Joint_Field_Office_%28JFO%29_preparation_in_Ohio.jpg/480px-FEMA_-_32011_-_FEMA_Joint_Field_Office_%28JFO%29_preparation_in_Ohio.jpg" alt="Sucker" /></p>
 
 <h2>Examples</h2>
 
@@ -43,12 +43,7 @@
   :secret         =&gt; "API SECRET")
 </code></pre>
 
-<p>Optionally, fiddle with cURL. Say you want to query Amazon through a different network interface.</p>
-
-<pre><code>worker.curl { |c| c.interface = "eth0:0" }
-</code></pre>
-
-<p>Now, set up a request.</p>
+<p>Prep a request.</p>
 
 <pre><code>asin_batch = %w{
   0816614024 0143105825 0485113600 0816616779 0942299078
@@ -60,44 +55,39 @@ worker &lt;&lt; {
   "ResponseGroup" =&gt; ["ItemAttributes", "OfferFull"] }
 </code></pre>
 
-<p>Hit Amazon.</p>
+<p>Perform the request.</p>
 
 <pre><code>response = worker.get
 </code></pre>
 
-<p>View the internals of the response object.</p>
+<p>Debug.</p>
 
-<pre><code>p response.code,
-  response.time,
-  response.body,
-  response.xml
+<pre><code>if response.valid?
+  p response.code,
+    response.time,
+    response.body,
+    response.xml,
+    response.to_hash
+end
 </code></pre>
 
-<p>Confirm response is valid.</p>
+<p>Say you performed an item lookup. Iterate over all items and errors.</p>
 
-<pre><code>response.valid?
+<pre><code>response.node("Item").each { |item| ... }
+response.node("Error").each { |error| ... }
 </code></pre>
 
-<p>Cast response as a hash.</p>
-
-<pre><code>pp response.to_hash
-</code></pre>
-
-<p>Grab a node.</p>
-
-<pre><code>pp response.node("Item"),
-   response.node("Error")
-</code></pre>
-
-<p>Fetch another ASIN in a more DSL-y way.</p>
+<p>Perform a new request in a more DSL-y way.</p>
 
 <pre><code>worker &lt;&lt; { "ItemId"  =&gt; "0486454398" }
-pp worker.get.node("Item")
+worker.get.node("Item").each { |item| ... }
 </code></pre>
 
 <p>Repeat ad infinitum.</p>
 
-<p>Check the <a href="http://github.com/papercavalier/sucker/tree/master/spec/integration/">integration specs</a> for more examples and then dive into the <a href="https://affiliate-program.amazon.co.uk/gp/advertising/api/detail/main.html">API docs</a>.</p>
+<p>Check the <a href="http://github.com/papercavalier/sucker/tree/master/spec/integration/">integration specs</a> for more examples. In particullar, see <a href="http://github.com/papercavalier/sucker/tree/master/spec/integration/twenty_items_spec.rb">twenty items</a> and <a href="http://github.com/papercavalier/sucker/tree/master/spec/integration/multiple_locales_spec.rb">multiple locales</a> for advanced usage.</p>
+
+<p>Finally, dive into the <a href="https://affiliate-program.amazon.co.uk/gp/advertising/api/detail/main.html">API docs</a> to construct your own queries.</p>
 
 <h2>Stubbing</h2>
 
