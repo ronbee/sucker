@@ -19,7 +19,7 @@
         </h1>
         <ul class="files">
             <li>README.markdown</li>
-            <li>Last modified: 2010-10-22 13:31:53 +0100</li>
+            <li>Last modified: 2010-10-22 15:07:00 +0100</li>
         </ul>
     </div>
 
@@ -38,9 +38,9 @@
 <p>Set up a worker.</p>
 
 <pre><code>worker = Sucker.new(
-  :locale         =&gt; "us",
-  :key            =&gt; "API KEY",
-  :secret         =&gt; "API SECRET")
+  :locale =&gt; "us",
+  :key    =&gt; "API KEY",
+  :secret =&gt; "API SECRET")
 </code></pre>
 
 <p>Prep a request.</p>
@@ -62,13 +62,12 @@ worker &lt;&lt; {
 
 <p>Debug.</p>
 
-<pre><code>if response.valid?
-  p response.code,
-    response.time,
-    response.body,
-    response.xml,
-    response.to_hash
-end
+<pre><code>p response.valid?,
+  response.code,
+  response.time,
+  response.body,
+  response.xml,
+  response.to_hash
 </code></pre>
 
 <p>You performed an item lookup. Iterate over all items and errors.</p>
