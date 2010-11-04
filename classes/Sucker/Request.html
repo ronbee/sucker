@@ -56,7 +56,7 @@ A wrapper around the API request
         <dd>
             <ul>
                 
-                <li><a href="#M000005"><<</a></li>
+                <li><a href="#M000004"><<</a></li>
                 
             </ul>
         </dd>
@@ -65,7 +65,7 @@ A wrapper around the API request
         <dd>
             <ul>
                 
-                <li><a href="#M000006">associate_tag=</a></li>
+                <li><a href="#M000005">associate_tag=</a></li>
                 
             </ul>
         </dd>
@@ -74,7 +74,7 @@ A wrapper around the API request
         <dd>
             <ul>
                 
-                <li><a href="#M000007">curl</a></li>
+                <li><a href="#M000006">curl</a></li>
                 
             </ul>
         </dd>
@@ -83,9 +83,9 @@ A wrapper around the API request
         <dd>
             <ul>
                 
-                <li><a href="#M000011">get</a>,</li>
+                <li><a href="#M000010">get</a>,</li>
                 
-                <li><a href="#M000012">get!</a></li>
+                <li><a href="#M000011">get!</a></li>
                 
             </ul>
         </dd>
@@ -94,7 +94,7 @@ A wrapper around the API request
         <dd>
             <ul>
                 
-                <li><a href="#M000013">key=</a></li>
+                <li><a href="#M000012">key=</a></li>
                 
             </ul>
         </dd>
@@ -235,9 +235,9 @@ Initializes a request object
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000005">
+                <div class="title" id="M000004">
                     
-                    <a name="M000005"></a><b>&lt;&lt;</b>(hash)
+                    <a name="M000004"></a><b>&lt;&lt;</b>(hash)
                     
                 </div>
                 
@@ -261,12 +261,12 @@ Merges a hash into existing parameters
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000005_source')" id="l_M000005_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000004_source')" id="l_M000004_source">show</a>
                         
                         | <a href="http://github.com/papercavalier/sucker/blob/c955b608eb49ea4228682b0c343984e83063cd3a/lib/sucker/request.rb#L48" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000005_source" class="dyn-source">
+                    <div id="M000004_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/sucker/request.rb, line 48</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-operator">&lt;&lt;</span>(<span class="ruby-identifier">hash</span>)
       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">hash</span>)
@@ -277,9 +277,9 @@ Merges a hash into existing parameters
             </div>
             
             <div class="method">
-                <div class="title" id="M000006">
+                <div class="title" id="M000005">
                     
-                    <a name="M000006"></a><b>associate_tag=</b>(token)
+                    <a name="M000005"></a><b>associate_tag=</b>(token)
                     
                 </div>
                 
@@ -299,12 +299,12 @@ Sets the associate tag
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000006_source')" id="l_M000006_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000005_source')" id="l_M000005_source">show</a>
                         
                         | <a href="http://github.com/papercavalier/sucker/blob/c955b608eb49ea4228682b0c343984e83063cd3a/lib/sucker/request.rb#L57" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000006_source" class="dyn-source">
+                    <div id="M000005_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/sucker/request.rb, line 57</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">associate_tag=</span>(<span class="ruby-identifier">token</span>)
       <span class="ruby-identifier">parameters</span>[<span class="ruby-value str">&quot;AssociateTag&quot;</span>] = <span class="ruby-identifier">token</span>
@@ -315,9 +315,9 @@ Sets the associate tag
             </div>
             
             <div class="method">
-                <div class="title" id="M000007">
+                <div class="title" id="M000006">
                     
-                    <a name="M000007"></a><b>curl</b>()
+                    <a name="M000006"></a><b>curl</b>()
                     
                 </div>
                 
@@ -337,12 +337,12 @@ A configurable curl object
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000007_source')" id="l_M000007_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000006_source')" id="l_M000006_source">show</a>
                         
                         | <a href="http://github.com/papercavalier/sucker/blob/c955b608eb49ea4228682b0c343984e83063cd3a/lib/sucker/request.rb#L66" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000007_source" class="dyn-source">
+                    <div id="M000006_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/sucker/request.rb, line 66</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">curl</span>
       <span class="ruby-ivar">@curl</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Curl</span><span class="ruby-operator">::</span><span class="ruby-constant">Easy</span>.<span class="ruby-identifier">new</span>
@@ -355,9 +355,9 @@ A configurable curl object
             </div>
             
             <div class="method">
-                <div class="title" id="M000011">
+                <div class="title" id="M000010">
                     
-                    <a name="M000011"></a><b>get</b>()
+                    <a name="M000010"></a><b>get</b>()
                     
                 </div>
                 
@@ -377,12 +377,12 @@ Performs the request and returns a response object
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000011_source')" id="l_M000011_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000010_source')" id="l_M000010_source">show</a>
                         
                         | <a href="http://github.com/papercavalier/sucker/blob/c955b608eb49ea4228682b0c343984e83063cd3a/lib/sucker/request.rb#L77" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000011_source" class="dyn-source">
+                    <div id="M000010_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/sucker/request.rb, line 77</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get</span>
       <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">url</span> = <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">to_s</span>
@@ -396,9 +396,9 @@ Performs the request and returns a response object
             </div>
             
             <div class="method">
-                <div class="title" id="M000012">
+                <div class="title" id="M000011">
                     
-                    <a name="M000012"></a><b>get!</b>()
+                    <a name="M000011"></a><b>get!</b>()
                     
                 </div>
                 
@@ -414,12 +414,12 @@ Performs the request and returns a response object
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000012_source')" id="l_M000012_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000011_source')" id="l_M000011_source">show</a>
                         
                         | <a href="http://github.com/papercavalier/sucker/blob/c955b608eb49ea4228682b0c343984e83063cd3a/lib/sucker/request.rb#L85" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000012_source" class="dyn-source">
+                    <div id="M000011_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/sucker/request.rb, line 85</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get!</span>
       <span class="ruby-identifier">response</span> = <span class="ruby-identifier">get</span>
@@ -436,9 +436,9 @@ Performs the request and returns a response object
             </div>
             
             <div class="method">
-                <div class="title" id="M000013">
+                <div class="title" id="M000012">
                     
-                    <a name="M000013"></a><b>key=</b>(token)
+                    <a name="M000012"></a><b>key=</b>(token)
                     
                 </div>
                 
@@ -458,12 +458,12 @@ Sets the AWS Access Key ID
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000013_source')" id="l_M000013_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000012_source')" id="l_M000012_source">show</a>
                         
                         | <a href="http://github.com/papercavalier/sucker/blob/c955b608eb49ea4228682b0c343984e83063cd3a/lib/sucker/request.rb#L100" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000013_source" class="dyn-source">
+                    <div id="M000012_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/sucker/request.rb, line 100</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">key=</span>(<span class="ruby-identifier">token</span>)
       <span class="ruby-identifier">parameters</span>[<span class="ruby-value str">&quot;AWSAccessKeyId&quot;</span>] = <span class="ruby-identifier">token</span>

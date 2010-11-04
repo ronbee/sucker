@@ -74,7 +74,7 @@ A Nokogiri-driven wrapper around the cURL response
         <dd>
             <ul>
                 
-                <li><a href="#M000004">map</a></li>
+                <li><a href="#M000007">map</a></li>
                 
             </ul>
         </dd>
@@ -101,7 +101,7 @@ A Nokogiri-driven wrapper around the cURL response
         <dd>
             <ul>
                 
-                <li><a href="#M000010">valid?</a></li>
+                <li><a href="#M000013">valid?</a></li>
                 
             </ul>
         </dd>
@@ -273,9 +273,9 @@ Queries an xpath and returns an array of matching nodes
             </div>
             
             <div class="method">
-                <div class="title" id="M000004">
+                <div class="title" id="M000007">
                     
-                    <a name="M000004"></a><b>map</b>(path)
+                    <a name="M000007"></a><b>map</b>(path)
                     
                 </div>
                 
@@ -294,12 +294,12 @@ A shorthand that yields matches to a block and collects returned values
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000004_source')" id="l_M000004_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000007_source')" id="l_M000007_source">show</a>
                         
                         | <a href="http://github.com/papercavalier/sucker/blob/35d21d1218d40b87c738decb9a31a6e47ab1152d/lib/sucker/response.rb#L42" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000004_source" class="dyn-source">
+                    <div id="M000007_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/sucker/response.rb, line 42</span>
                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">map</span>(<span class="ruby-identifier">path</span>)
                         <span class="ruby-identifier">find</span>(<span class="ruby-identifier">path</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">e</span> }
@@ -348,9 +348,9 @@ Parses the response into a simple hash
             </div>
             
             <div class="method">
-                <div class="title" id="M000010">
+                <div class="title" id="M000013">
                     
-                    <a name="M000010"></a><b>valid?</b>()
+                    <a name="M000013"></a><b>valid?</b>()
                     
                 </div>
                 
@@ -371,12 +371,12 @@ Checks if the HTTP response is OK
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000010_source')" id="l_M000010_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000013_source')" id="l_M000013_source">show</a>
                         
                         | <a href="http://github.com/papercavalier/sucker/blob/35d21d1218d40b87c738decb9a31a6e47ab1152d/lib/sucker/response.rb#L66" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000010_source" class="dyn-source">
+                    <div id="M000013_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/sucker/response.rb, line 66</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">valid?</span>
       <span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">200</span>

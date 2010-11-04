@@ -19,7 +19,7 @@
         </h1>
         <ul class="files">
             <li>README.md</li>
-            <li>Last modified: Thu Nov 04 01:10:44 +0100 2010</li>
+            <li>Last modified: Thu Nov 04 01:16:39 +0100 2010</li>
         </ul>
     </div>
 
@@ -75,9 +75,14 @@ worker &lt;&lt; {
 <pre><code>response.each("Item") { |item| ... }
 </code></pre>
 
-<p>Iterate over errors.</p>
+<p>Map errors to a block.</p>
 
 <pre><code>errors = response.map("Error") { |error| ... }
+</code></pre>
+
+<p>Or simply get a hash of matching items.</p>
+
+<pre><code>items = response.find("Item")
 </code></pre>
 
 <p>Repeat ad infinitum.</p>
