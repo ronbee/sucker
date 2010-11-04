@@ -21,9 +21,9 @@
         </h1>
         <ul class="files">
             
-            <li><a href="../files/lib/sucker/response_rb.html">lib/sucker/response.rb</a></li>
-            
             <li><a href="../files/lib/sucker/request_rb.html">lib/sucker/request.rb</a></li>
+            
+            <li><a href="../files/lib/sucker/response_rb.html">lib/sucker/response.rb</a></li>
             
             <li><a href="../files/lib/sucker/version_rb.html">lib/sucker/version.rb</a></li>
             
@@ -35,10 +35,9 @@
         <div id="content">
     
     <div class="description">
-        <h1><a href="Sucker.html">Sucker</a></h1>
+        <h1>Sucker</h1>
 <p>
-<a href="Sucker.html">Sucker</a> is a Ruby wrapper to the Amazon Product
-Advertising API.
+Sucker is a Ruby wrapper to the Amazon Product Advertising API.
 </p>
 
     </div>
@@ -50,20 +49,6 @@ Advertising API.
     
 
     
-    
-    <div class="sectiontitle">Methods</div>
-    <dl class="methods">
-    
-        <dt>N</dt>
-        <dd>
-            <ul>
-                
-                <li><a href="#M000018">new</a></li>
-                
-            </ul>
-        </dd>
-    
-    </dl>
     
 
     
@@ -84,71 +69,10 @@ Advertising API.
     
 
     
-    <div class="sectiontitle">Constants</div>
-    <table border='0' cellpadding='5'>
-        
-        <tr valign='top'>
-            <td class="attr-name">VERSION</td>
-            <td>=</td>
-            <td class="attr-value">&quot;1.0.0.beta.4&quot;</td>
-        </tr>
-        
-        
-        <tr valign='top'>
-            <td class="attr-name">CURRENT_AMAZON_API_VERSION</td>
-            <td>=</td>
-            <td class="attr-value">&quot;2010-09-01&quot;</td>
-        </tr>
-        
-        
-    </table>
-    
 
     
 
     
-            <div class="sectiontitle">Class Public methods</div>
-            
-            <div class="method">
-                <div class="title" id="M000018">
-                    
-                    <a name="M000018"></a><b>new</b>(args={})
-                    
-                </div>
-                
-                <div class="description">
-                  <p>
-Initializes a request object
-</p>
-<pre>
-  worker = Sucker.new(
-    :locale =&gt; &quot;us&quot;,
-    :key    =&gt; &quot;API KEY&quot;,
-    :secret =&gt; &quot;API SECRET&quot;)
-</pre>
-
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000018_source')" id="l_M000018_source">show</a>
-                        
-                        | <a href="http://github.com/papercavalier/sucker/blob/93cdff892a5802ae78d95b14501ad3c8f7c549f8/lib/sucker.rb#L20" target="_blank" class="github_url">on GitHub</a>
-                        
-                    </p>
-                    <div id="M000018_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/sucker.rb, line 20</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>={})
-    <span class="ruby-constant">Sucker</span><span class="ruby-operator">::</span><span class="ruby-constant">Request</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>)
-  <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
 </div>
     </div>
   </body>

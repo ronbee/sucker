@@ -19,7 +19,7 @@
         </h1>
         <ul class="files">
             <li>README.md</li>
-            <li>Last modified: 2010-10-28 02:51:20 +0100</li>
+            <li>Last modified: Thu Nov 04 01:10:44 +0100 2010</li>
         </ul>
     </div>
 
@@ -72,12 +72,12 @@ worker &lt;&lt; {
 
 <p>Iterate over items in your item lookup.</p>
 
-<pre><code>response.find("Item")  { |item| ... }
+<pre><code>response.each("Item") { |item| ... }
 </code></pre>
 
 <p>Iterate over errors.</p>
 
-<pre><code>response.find("Error") { |error| ... }
+<pre><code>errors = response.map("Error") { |error| ... }
 </code></pre>
 
 <p>Repeat ad infinitum.</p>
@@ -95,6 +95,8 @@ worker &lt;&lt; {
 <h2>Compatibility</h2>
 
 <p>Specs pass against Ruby 1.8.7, Ruby 1.9.2, and Rubinius 1.1.</p>
+
+<p>Sucker works seamlessly with or without Rails.</p>
 <script type="text/javascript">$(function() {
   $('a').each(function() { $(this).attr('target', '_blank') })
 })</script>
