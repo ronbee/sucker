@@ -56,7 +56,7 @@ A wrapper around the API request
         <dd>
             <ul>
                 
-                <li><a href="#M000003"><<</a></li>
+                <li><a href="#M000001"><<</a></li>
                 
             </ul>
         </dd>
@@ -65,11 +65,11 @@ A wrapper around the API request
         <dd>
             <ul>
                 
-                <li><a href="#M000004">associate_tag</a>,</li>
+                <li><a href="#M000003">associate_tag</a>,</li>
                 
-                <li><a href="#M000005">associate_tag=</a>,</li>
+                <li><a href="#M000004">associate_tag=</a>,</li>
                 
-                <li><a href="#M000010">associate_tags=</a></li>
+                <li><a href="#M000005">associate_tags=</a></li>
                 
             </ul>
         </dd>
@@ -78,7 +78,7 @@ A wrapper around the API request
         <dd>
             <ul>
                 
-                <li><a href="#M000011">curl_opts</a></li>
+                <li><a href="#M000010">curl_opts</a></li>
                 
             </ul>
         </dd>
@@ -87,7 +87,7 @@ A wrapper around the API request
         <dd>
             <ul>
                 
-                <li><a href="#M000012">get</a>,</li>
+                <li><a href="#M000011">get</a>,</li>
                 
                 <li><a href="#M000016">get_all</a></li>
                 
@@ -243,9 +243,9 @@ Initializes a request object
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000003">
+                <div class="title" id="M000001">
                     
-                    <a name="M000003"></a><b>&lt;&lt;</b>(hash)
+                    <a name="M000001"></a><b>&lt;&lt;</b>(hash)
                     
                 </div>
                 
@@ -269,12 +269,12 @@ Merges a hash into existing parameters
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000003_source')" id="l_M000003_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000001_source')" id="l_M000001_source">show</a>
                         
                         | <a href="http://github.com/papercavalier/sucker/blob/f3991aeaa0d71d71f91d4f789a86898015e9f823/lib/sucker/request.rb#L52" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000003_source" class="dyn-source">
+                    <div id="M000001_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/sucker/request.rb, line 52</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-operator">&lt;&lt;</span>(<span class="ruby-identifier">hash</span>)
       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">hash</span>)
@@ -285,9 +285,9 @@ Merges a hash into existing parameters
             </div>
             
             <div class="method">
-                <div class="title" id="M000004">
+                <div class="title" id="M000003">
                     
-                    <a name="M000004"></a><b>associate_tag</b>()
+                    <a name="M000003"></a><b>associate_tag</b>()
                     
                 </div>
                 
@@ -303,12 +303,12 @@ Returns the associate tag for the current locale
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000004_source')" id="l_M000004_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000003_source')" id="l_M000003_source">show</a>
                         
                         | <a href="http://github.com/papercavalier/sucker/blob/f3991aeaa0d71d71f91d4f789a86898015e9f823/lib/sucker/request.rb#L57" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000004_source" class="dyn-source">
+                    <div id="M000003_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/sucker/request.rb, line 57</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">associate_tag</span>
       <span class="ruby-ivar">@associate_tags</span>[<span class="ruby-identifier">locale</span>.<span class="ruby-identifier">to_sym</span>] <span class="ruby-keyword kw">rescue</span> <span class="ruby-keyword kw">nil</span>
@@ -319,9 +319,9 @@ Returns the associate tag for the current locale
             </div>
             
             <div class="method">
-                <div class="title" id="M000005">
+                <div class="title" id="M000004">
                     
-                    <a name="M000005"></a><b>associate_tag=</b>(token)
+                    <a name="M000004"></a><b>associate_tag=</b>(token)
                     
                 </div>
                 
@@ -341,12 +341,12 @@ Sets the associate tag for the current locale
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000005_source')" id="l_M000005_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000004_source')" id="l_M000004_source">show</a>
                         
                         | <a href="http://github.com/papercavalier/sucker/blob/f3991aeaa0d71d71f91d4f789a86898015e9f823/lib/sucker/request.rb#L66" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000005_source" class="dyn-source">
+                    <div id="M000004_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/sucker/request.rb, line 66</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">associate_tag=</span>(<span class="ruby-identifier">token</span>)
       <span class="ruby-ivar">@associate_tags</span> = <span class="ruby-constant">HOSTS</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">tags</span>, <span class="ruby-identifier">loc</span><span class="ruby-operator">|</span>
@@ -360,9 +360,9 @@ Sets the associate tag for the current locale
             </div>
             
             <div class="method">
-                <div class="title" id="M000010">
+                <div class="title" id="M000005">
                     
-                    <a name="M000010"></a><b>associate_tags=</b>(tokens)
+                    <a name="M000005"></a><b>associate_tags=</b>(tokens)
                     
                 </div>
                 
@@ -388,12 +388,12 @@ Sets associate tags for all locales
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000010_source')" id="l_M000010_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000005_source')" id="l_M000005_source">show</a>
                         
                         | <a href="http://github.com/papercavalier/sucker/blob/f3991aeaa0d71d71f91d4f789a86898015e9f823/lib/sucker/request.rb#L84" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000010_source" class="dyn-source">
+                    <div id="M000005_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/sucker/request.rb, line 84</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">associate_tags=</span>(<span class="ruby-identifier">tokens</span>)
       <span class="ruby-ivar">@associate_tags</span> = <span class="ruby-identifier">tokens</span>
@@ -404,9 +404,9 @@ Sets associate tags for all locales
             </div>
             
             <div class="method">
-                <div class="title" id="M000011">
+                <div class="title" id="M000010">
                     
-                    <a name="M000011"></a><b>curl_opts</b>()
+                    <a name="M000010"></a><b>curl_opts</b>()
                     
                 </div>
                 
@@ -426,12 +426,12 @@ Returns options for curl and yields them if given a block
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000011_source')" id="l_M000011_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000010_source')" id="l_M000010_source">show</a>
                         
                         | <a href="http://github.com/papercavalier/sucker/blob/f3991aeaa0d71d71f91d4f789a86898015e9f823/lib/sucker/request.rb#L93" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000011_source" class="dyn-source">
+                    <div id="M000010_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/sucker/request.rb, line 93</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">curl_opts</span>
       <span class="ruby-ivar">@curl_opts</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">OpenStruct</span>.<span class="ruby-identifier">new</span>
@@ -445,9 +445,9 @@ Returns options for curl and yields them if given a block
             </div>
             
             <div class="method">
-                <div class="title" id="M000012">
+                <div class="title" id="M000011">
                     
-                    <a name="M000012"></a><b>get</b>()
+                    <a name="M000011"></a><b>get</b>()
                     
                 </div>
                 
@@ -467,12 +467,12 @@ Performs a request and returns a response
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000012_source')" id="l_M000012_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000011_source')" id="l_M000011_source">show</a>
                         
                         | <a href="http://github.com/papercavalier/sucker/blob/f3991aeaa0d71d71f91d4f789a86898015e9f823/lib/sucker/request.rb#L105" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000012_source" class="dyn-source">
+                    <div id="M000011_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/sucker/request.rb, line 105</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get</span>
       <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span> <span class="ruby-value str">&quot;Locale missing&quot;</span>         <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">locale</span>
