@@ -19,7 +19,7 @@
         </h1>
         <ul class="files">
             <li>README.md</li>
-            <li>Last modified: Thu Nov 04 01:16:39 +0100 2010</li>
+            <li>Last modified: 2010-11-16 01:56:29 +0000</li>
         </ul>
     </div>
 
@@ -29,9 +29,9 @@
     <div class="description">
         <h1>Sucker</h1>
 
-<p>Sucker is a Ruby wrapper to the <a href="https://affiliate-program.amazon.co.uk/gp/advertising/api/detail/main.html">Amazon Product Advertising API</a>. It runs on <a href="http://github.com/taf2/curb">curb</a> and <a href="http://github.com/rails/rails/blob/master/activesupport/lib/active_support/xml_mini/nokogiri.rb">the Nokogiri implementation of the XML Mini module</a> in Active Support. It's fast and supports <strong>the entire API</strong>.</p>
+<p>Sucker is a minimal Ruby wrapper to the <a href="https://affiliate-program.amazon.co.uk/gp/advertising/api/detail/main.html">Amazon Product Advertising API</a>. It runs on <a href="http://github.com/taf2/curb">curb</a> and <a href="http://github.com/rails/rails/blob/master/activesupport/lib/active_support/xml_mini/nokogiri.rb">the Nokogiri implementation of the XML Mini module</a> in Active Support. It's fast and supports <strong>the entire API</strong>.</p>
 
-<p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/FEMA_-_32011_-_FEMA_Joint_Field_Office_%28JFO%29_preparation_in_Ohio.jpg/480px-FEMA_-_32011_-_FEMA_Joint_Field_Office_%28JFO%29_preparation_in_Ohio.jpg" alt="Sucker" /></p>
+<p><img src="http://github.com/papercavalier/sucker/raw/master/electrolux.jpg" alt="Electrolux" /></p>
 
 <h2>Examples</h2>
 
@@ -95,11 +95,11 @@ worker &lt;&lt; {
 
 <p>Use <a href="http://github.com/myronmarston/vcr">VCR</a> to stub your requests.</p>
 
-<p>Caveat: Match URIs on host only and create a new cassette for each query. <a href="http://github.com/papercavalier/sucker/blob/master/spec/support/vcr.rb">This is how I do it</a>.</p>
+<p>Caveat: Match URIs on host only and create a new cassette for each query. <a href="http://github.com/papercavalier/sucker/blob/master/spec/support/vcr.rb">This is how my VCR helper looks like.</a>.</p>
 
 <h2>Compatibility</h2>
 
-<p>Specs pass against Ruby 1.8.7, Ruby 1.9.2, and Rubinius 1.1.</p>
+<p>Specs pass against Ruby 1.8.7 and Ruby 1.9.2.</p>
 
 <p>Sucker works seamlessly with or without Rails.</p>
 <script type="text/javascript">$(function() {

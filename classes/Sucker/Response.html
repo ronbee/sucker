@@ -65,7 +65,7 @@ A Nokogiri-driven wrapper around the cURL response
         <dd>
             <ul>
                 
-                <li><a href="#M000003">find</a></li>
+                <li><a href="#M000005">find</a></li>
                 
             </ul>
         </dd>
@@ -74,7 +74,7 @@ A Nokogiri-driven wrapper around the cURL response
         <dd>
             <ul>
                 
-                <li><a href="#M000007">map</a></li>
+                <li><a href="#M000006">map</a></li>
                 
             </ul>
         </dd>
@@ -83,7 +83,7 @@ A Nokogiri-driven wrapper around the cURL response
         <dd>
             <ul>
                 
-                <li><a href="#M000000">new</a></li>
+                <li><a href="#M000001">new</a></li>
                 
             </ul>
         </dd>
@@ -92,7 +92,7 @@ A Nokogiri-driven wrapper around the cURL response
         <dd>
             <ul>
                 
-                <li><a href="#M000009">to_hash</a></li>
+                <li><a href="#M000008">to_hash</a></li>
                 
             </ul>
         </dd>
@@ -160,6 +160,16 @@ Transaction time in seconds for request
 </p></td>
         </tr>
         
+        <tr valign='top'>
+            <td class='attr-rw'>
+                [RW]
+            </td>
+            <td class='attr-name'>uri</td>
+            <td class='attr-desc'><p>
+The request URI
+</p></td>
+        </tr>
+        
     </table>
     
 
@@ -167,9 +177,9 @@ Transaction time in seconds for request
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000000">
+                <div class="title" id="M000001">
                     
-                    <a name="M000000"></a><b>new</b>(curl)
+                    <a name="M000001"></a><b>new</b>(curl)
                     
                 </div>
                 
@@ -178,17 +188,18 @@ Transaction time in seconds for request
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000000_source')" id="l_M000000_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000001_source')" id="l_M000001_source">show</a>
                         
-                        | <a href="http://github.com/papercavalier/sucker/blob/35d21d1218d40b87c738decb9a31a6e47ab1152d/lib/sucker/response.rb#L15" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/papercavalier/sucker/blob/59a83a6d4f5f5154e3a0bee298bbc60f83b3387b/lib/sucker/response.rb#L20" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000000_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/sucker/response.rb, line 15</span>
+                    <div id="M000001_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/sucker/response.rb, line 20</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">curl</span>)
       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">body</span> = <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">body_str</span>
       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">code</span> = <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">response_code</span>
       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">time</span> = <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">total_time</span>
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">uri</span>  = <span class="ruby-identifier">curl</span>.<span class="ruby-identifier">url</span>
     <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
@@ -221,23 +232,23 @@ A shorthand that yields each match to a block
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000002_source')" id="l_M000002_source">show</a>
                         
-                        | <a href="http://github.com/papercavalier/sucker/blob/35d21d1218d40b87c738decb9a31a6e47ab1152d/lib/sucker/response.rb#L25" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/papercavalier/sucker/blob/59a83a6d4f5f5154e3a0bee298bbc60f83b3387b/lib/sucker/response.rb#L31" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000002_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/sucker/response.rb, line 25</span>
-                <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">each</span>(<span class="ruby-identifier">path</span>)
-                        <span class="ruby-identifier">find</span>(<span class="ruby-identifier">path</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">node</span> }
-                <span class="ruby-keyword kw">end</span></pre>
+                        <pre><span class="ruby-comment cmt"># File lib/sucker/response.rb, line 31</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">each</span>(<span class="ruby-identifier">path</span>)
+      <span class="ruby-identifier">find</span>(<span class="ruby-identifier">path</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">e</span> }
+    <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000003">
+                <div class="title" id="M000005">
                     
-                    <a name="M000003"></a><b>find</b>(path)
+                    <a name="M000005"></a><b>find</b>(path)
                     
                 </div>
                 
@@ -257,15 +268,15 @@ Queries an xpath and returns an array of matching nodes
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000003_source')" id="l_M000003_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000005_source')" id="l_M000005_source">show</a>
                         
-                        | <a href="http://github.com/papercavalier/sucker/blob/35d21d1218d40b87c738decb9a31a6e47ab1152d/lib/sucker/response.rb#L34" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/papercavalier/sucker/blob/59a83a6d4f5f5154e3a0bee298bbc60f83b3387b/lib/sucker/response.rb#L40" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000003_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/sucker/response.rb, line 34</span>
+                    <div id="M000005_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/sucker/response.rb, line 40</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">find</span>(<span class="ruby-identifier">path</span>)
-      <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-node">&quot;//xmlns:#{path}&quot;</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span> <span class="ruby-identifier">strip_content</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">to_hash</span>[<span class="ruby-identifier">path</span>]) }
+      <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-node">&quot;//xmlns:#{path}&quot;</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">strip_content</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">to_hash</span>[<span class="ruby-identifier">path</span>]) }
     <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
@@ -273,9 +284,9 @@ Queries an xpath and returns an array of matching nodes
             </div>
             
             <div class="method">
-                <div class="title" id="M000007">
+                <div class="title" id="M000006">
                     
-                    <a name="M000007"></a><b>map</b>(path)
+                    <a name="M000006"></a><b>map</b>(path)
                     
                 </div>
                 
@@ -294,15 +305,15 @@ A shorthand that yields matches to a block and collects returned values
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000007_source')" id="l_M000007_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000006_source')" id="l_M000006_source">show</a>
                         
-                        | <a href="http://github.com/papercavalier/sucker/blob/35d21d1218d40b87c738decb9a31a6e47ab1152d/lib/sucker/response.rb#L42" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/papercavalier/sucker/blob/59a83a6d4f5f5154e3a0bee298bbc60f83b3387b/lib/sucker/response.rb#L48" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000007_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/sucker/response.rb, line 42</span>
-                <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">map</span>(<span class="ruby-identifier">path</span>)
-                        <span class="ruby-identifier">find</span>(<span class="ruby-identifier">path</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">e</span> }
+                    <div id="M000006_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/sucker/response.rb, line 48</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">map</span>(<span class="ruby-identifier">path</span>)
+      <span class="ruby-identifier">find</span>(<span class="ruby-identifier">path</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">e</span> }
     <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
@@ -310,9 +321,9 @@ A shorthand that yields matches to a block and collects returned values
             </div>
             
             <div class="method">
-                <div class="title" id="M000009">
+                <div class="title" id="M000008">
                     
-                    <a name="M000009"></a><b>to_hash</b>()
+                    <a name="M000008"></a><b>to_hash</b>()
                     
                 </div>
                 
@@ -332,13 +343,13 @@ Parses the response into a simple hash
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000009_source')" id="l_M000009_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000008_source')" id="l_M000008_source">show</a>
                         
-                        | <a href="http://github.com/papercavalier/sucker/blob/35d21d1218d40b87c738decb9a31a6e47ab1152d/lib/sucker/response.rb#L56" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/papercavalier/sucker/blob/59a83a6d4f5f5154e3a0bee298bbc60f83b3387b/lib/sucker/response.rb#L62" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000009_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/sucker/response.rb, line 56</span>
+                    <div id="M000008_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/sucker/response.rb, line 62</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_hash</span>
       <span class="ruby-identifier">strip_content</span>(<span class="ruby-identifier">xml</span>.<span class="ruby-identifier">to_hash</span>)
     <span class="ruby-keyword kw">end</span></pre>
@@ -373,11 +384,11 @@ Checks if the HTTP response is OK
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000013_source')" id="l_M000013_source">show</a>
                         
-                        | <a href="http://github.com/papercavalier/sucker/blob/35d21d1218d40b87c738decb9a31a6e47ab1152d/lib/sucker/response.rb#L66" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/papercavalier/sucker/blob/59a83a6d4f5f5154e3a0bee298bbc60f83b3387b/lib/sucker/response.rb#L72" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000013_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/sucker/response.rb, line 66</span>
+                        <pre><span class="ruby-comment cmt"># File lib/sucker/response.rb, line 72</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">valid?</span>
       <span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">200</span>
     <span class="ruby-keyword kw">end</span></pre>
@@ -411,11 +422,11 @@ The XML document
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000014_source')" id="l_M000014_source">show</a>
                         
-                        | <a href="http://github.com/papercavalier/sucker/blob/35d21d1218d40b87c738decb9a31a6e47ab1152d/lib/sucker/response.rb#L74" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/papercavalier/sucker/blob/59a83a6d4f5f5154e3a0bee298bbc60f83b3387b/lib/sucker/response.rb#L80" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000014_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/sucker/response.rb, line 74</span>
+                        <pre><span class="ruby-comment cmt"># File lib/sucker/response.rb, line 80</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">xml</span>
       <span class="ruby-ivar">@xml</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>(<span class="ruby-identifier">body</span>)
     <span class="ruby-keyword kw">end</span></pre>
