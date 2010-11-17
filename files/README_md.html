@@ -19,7 +19,7 @@
         </h1>
         <ul class="files">
             <li>README.md</li>
-            <li>Last modified: 2010-11-16 02:54:40 +0000</li>
+            <li>Last modified: 2010-11-17 16:08:29 +0000</li>
         </ul>
     </div>
 
@@ -31,9 +31,9 @@
 
 <p>Sucker is a minimal Ruby wrapper to the <a href="https://affiliate-program.amazon.co.uk/gp/advertising/api/detail/main.html">Amazon Product Advertising API</a>. It runs on <a href="http://github.com/taf2/curb">curb</a> and <a href="http://github.com/rails/rails/blob/master/activesupport/lib/active_support/xml_mini/nokogiri.rb">the Nokogiri implementation of the XML Mini module</a> in Active Support. It's fast and supports <strong>the entire API</strong>.</p>
 
-<p><img src="http://github.com/papercavalier/sucker/raw/master/electrolux.jpg" alt="Electrolux" /></p>
+<p><img src="https://github.com/papercavalier/sucker/raw/master/electrolux.jpg" alt="Electrolux" /></p>
 
-<h2>Examples</h2>
+<h2>Usage</h2>
 
 <p>Set up a worker.</p>
 
@@ -45,63 +45,53 @@
 
 <p>Prepare a request.</p>
 
-<pre><code>asin_batch = %w{
-  0816614024 0143105825 0485113600 0816616779 0942299078
-  0816614008 144006654X 0486400360 0486417670 087220474X }
-worker &lt;&lt; {
+<pre><code>worker &lt;&lt; {
   "Operation"     =&gt; "ItemLookup",
   "IdType"        =&gt; "ASIN",
-  "ItemId"        =&gt; asin_batch,
-  "ResponseGroup" =&gt; ["ItemAttributes", "OfferFull"] }
+  "ItemId"        =&gt; some_asins,
+  "ResponseGroup" =&gt; "ItemAttributes" }
 </code></pre>
 
-<p>Perform the request.</p>
+<p>Get a response.</p>
 
 <pre><code>response = worker.get
 </code></pre>
 
-<p>Debug.</p>
+<p>Make sure nothing went <a href="http://gloss.papercavalier.com/2010/11/01/amazon-call-throttling-demystified.html">awry</a>.</p>
 
-<pre><code>p response.valid?,
-  response.code,
-  response.time,
-  response.body,
-  response.xml,
-  response.to_hash
+<pre><code>response.valid?
 </code></pre>
 
-<p>Iterate over items in your item lookup.</p>
+<p>Now parse it.</p>
 
-<pre><code>response.each("Item") { |item| ... }
-</code></pre>
-
-<p>Map errors to a block.</p>
-
-<pre><code>errors = response.map("Error") { |error| ... }
-</code></pre>
-
-<p>Or simply get a hash of matching items.</p>
-
-<pre><code>items = response.find("Item")
+<pre><code>items = response.map("Item") do |item|
+  # parse item
+end
 </code></pre>
 
 <p>Repeat ad infinitum.</p>
 
-<p>Check my <a href="http://github.com/papercavalier/sucker/tree/master/spec/integration/">integration specs</a> for more examples. See <a href="http://github.com/papercavalier/sucker/tree/master/spec/integration/twenty_items_spec.rb">twenty items</a> and <a href="http://github.com/papercavalier/sucker/tree/master/spec/integration/multiple_locales_spec.rb">multiple locales</a> for relatively advanced usage.</p>
+<p><a href="http://github.com/papercavalier/sucker/tree/master/spec/integration/">Check my integration specs</a> for more detailed examples. See <a href="http://github.com/papercavalier/sucker/tree/master/spec/integration/twenty_items_spec.rb">twenty items</a> and <a href="http://github.com/papercavalier/sucker/tree/master/spec/integration/multiple_locales_spec.rb">multiple locales</a> for relatively advanced usage.</p>
 
-<p>Last but not least, dive into the <a href="https://affiliate-program.amazon.co.uk/gp/advertising/api/detail/main.html">API docs</a> to construct your own queries.</p>
+<p>Read the source code and dive into the <a href="https://affiliate-program.amazon.co.uk/gp/advertising/api/detail/main.html">Amazon API docs</a>.</p>
 
 <h2>Stubbing</h2>
 
 <p>Use <a href="http://github.com/myronmarston/vcr">VCR</a> to stub your requests.</p>
 
-<p>Caveat: Match URIs on host only and create a new cassette for each query. <a href="http://github.com/papercavalier/sucker/blob/master/spec/support/vcr.rb">This is how my VCR helper looks like</a>.</p>
+<p>Match URIs on host only and create a new cassette for each query. <a href="http://github.com/papercavalier/sucker/blob/master/spec/support/vcr.rb">This is how my VCR setup looks like</a>.</p>
 
 <h2>Compatibility</h2>
 
 <p>Specs pass against Ruby 1.8.7 and Ruby 1.9.2.</p>
 
 <p>Sucker works seamlessly with or without Rails.</p>
+
+<p>Sucker won't work on JRuby. (We got Curl under the hood. It's worth the trade-off.)</p>
+
+<h2>Afterword</h2>
+
+<p>No DSL. No object mapping. Pure Nokogiri goodness.</p>
 <script type="text/javascript">$(function() {
   $('a').each(function() { $(this).attr('target', '_blank') })
 })</script>
